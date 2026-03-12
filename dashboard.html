@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Fitness Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body onload="loadDashboard()">
+
+<div class="sidebar">
+
+<h2>Fitness</h2>
+
+<div class="profile">
+
+<div class="profile-icon">👤</div>
+
+<p id="welcome"></p>
+
+</div>
+
+<ul>
+
+<li onclick="showSection('dashboard')">Dashboard</li>
+<li onclick="showSection('goals')">Goals</li>
+<li onclick="showSection('workout')">Workout</li>
+<li onclick="showSection('diet')">Diet</li>
+<li onclick="showSection('stats')">Statistics</li>
+<li onclick="showSection('profile')">Profile</li>
+
+</ul>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<div class="main">
+
+<h1>Fitness Planning Dashboard</h1>
+
+<!-- DASHBOARD -->
+
+<div id="dashboardSection" class="section">
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Calories Today</h3>
+
+<p id="caloriesToday">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>BMI</h3>
+
+<p id="bmiValue">0</p>
+
+</div>
+
+</div>
+
+<div class="fitness-form">
+
+<input id="height" placeholder="Height (cm)">
+<input id="weight" placeholder="Weight (kg)">
+<input id="breakfast" placeholder="Breakfast Calories">
+<input id="lunch" placeholder="Lunch Calories">
+<input id="dinner" placeholder="Dinner Calories">
+<input id="snacks" placeholder="Snacks Calories">
+
+<button onclick="saveFitness()">Save</button>
+
+</div>
+
+<div class="fitness-images">
+
+<img src="https://images.unsplash.com/photo-1594737625785-cb3e09e7a9c9?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+</div>
+
+<!-- GOALS -->
+
+<div id="goalsSection" class="section" style="display:none">
+
+<h2>Your Goals</h2>
+
+<input id="goalWeight" placeholder="Target Weight">
+
+<select id="goalType">
+
+<option>Weight Loss</option>
+<option>Muscle Gain</option>
+<option>Stay Fit</option>
+
+</select>
+
+<button onclick="saveGoal()">Save Goal</button>
+
+<p id="goalDisplay"></p>
+
+</div>
+
+<!-- WORKOUT -->
+
+<div id="workoutSection" class="section" style="display:none">
+
+<h2>Workout Suggestions</h2>
+
+<ul id="workoutList"></ul>
+
+</div>
+
+<!-- DIET -->
+
+<div id="dietSection" class="section" style="display:none">
+
+<h2>Diet Suggestions</h2>
+
+<ul id="dietList"></ul>
+
+</div>
+
+<!-- STATISTICS -->
+
+<div id="statsSection" class="section" style="display:none">
+
+<h2>Weekly BMI Progress</h2>
+
+<canvas id="bmiChart"></canvas>
+
+</div>
+
+<!-- PROFILE -->
+
+<div id="profileSection" class="section" style="display:none">
+
+<input id="profileName" placeholder="Name">
+
+<input id="profileAge" placeholder="Age">
+
+<button onclick="saveProfile()">Save</button>
+
+<p id="profileDisplay"></p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
