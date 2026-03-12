@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Fitness Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body onload="loadDashboard()">
+
+<div class="sidebar">
+
+<h2>Fitness</h2>
+
+<p id="welcome"></p>
+
+<ul>
+
+<li onclick="showSection('dashboard')">Dashboard</li>
+<li onclick="showSection('goals')">Goals</li>
+<li onclick="showSection('workout')">Workout</li>
+<li onclick="showSection('stats')">Statistics</li>
+
+</ul>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<div class="main">
+
+<h1>Fitness Planning Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+<h3>🔥 Calories</h3>
+<p id="caloriesToday">0</p>
+</div>
+
+<div class="card">
+<h3>⚖ BMI</h3>
+<p id="bmiValue">0</p>
+</div>
+
+<div class="card">
+<h3>💪 Workouts</h3>
+<p>5</p>
+</div>
+
+<div class="card">
+<h3>🏃 Steps</h3>
+<p>6500 / 10000</p>
+</div>
+
+</div>
+
+<div class="fitness-form">
+
+<h3>Track Fitness</h3>
+
+<input id="height" placeholder="Height (cm)">
+<input id="weight" placeholder="Weight (kg)">
+<input id="breakfast" placeholder="Breakfast Calories">
+<input id="lunch" placeholder="Lunch Calories">
+<input id="dinner" placeholder="Dinner Calories">
+<input id="snacks" placeholder="Snacks Calories">
+
+<button onclick="saveFitness()">Save</button>
+
+</div>
+
+<div class="charts">
+
+<canvas id="bmiChart"></canvas>
+
+<canvas id="calorieChart"></canvas>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
