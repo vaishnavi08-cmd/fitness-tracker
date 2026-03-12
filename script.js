@@ -1,24 +1,32 @@
-function register(){
+ function register(){
 
 let email=document.getElementById("regEmail").value;
 let password=document.getElementById("regPassword").value;
 
+if(email==="" || password===""){
+alert("Please enter email and password");
+return;
+}
+
 localStorage.setItem("email",email);
 localStorage.setItem("password",password);
 
-alert("Account created");
+alert("Account created successfully");
 
 window.location="index.html";
 
 }
+
 
 function login(){
 
 let email=document.getElementById("email").value;
 let password=document.getElementById("password").value;
 
-if(email===localStorage.getItem("email") &&
-password===localStorage.getItem("password")){
+let savedEmail=localStorage.getItem("email");
+let savedPassword=localStorage.getItem("password");
+
+if(email===savedEmail && password===savedPassword){
 
 localStorage.setItem("loggedUser",email);
 
@@ -26,7 +34,7 @@ window.location="dashboard.html";
 
 }else{
 
-alert("Invalid login");
+alert("Invalid email or password");
 
 }
 
